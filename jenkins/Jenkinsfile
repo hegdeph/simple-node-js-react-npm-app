@@ -1,4 +1,4 @@
-pipeline {
+
     node ('Jenkins-Slaves-Cloud'){
     agent {
         docker {
@@ -29,4 +29,4 @@ pipeline {
         }
     }
     }
-}
+
