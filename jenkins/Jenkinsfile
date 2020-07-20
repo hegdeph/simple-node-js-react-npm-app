@@ -2,7 +2,7 @@
     pipeline{
     
     agent {
-            label 'Jenkins-Cloud-Agent'
+            label 'Jenkins-Cloud-Agent-Docker'
           }
         
     stages {
