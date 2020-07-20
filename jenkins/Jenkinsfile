@@ -10,7 +10,7 @@
               CI = 'true'
           }
           agent {
-            label 'Jenkins-Cloud-Agent-NodeJs'
+            label 'Jenkins-Cloud-Agent'
           }
             steps {
                 sh 'npm install'
