@@ -31,7 +31,7 @@
         agent {
             label 'Jenkins-Cloud-Agent'
           }
-        step {
+        steps {
                 docker.withRegistry('https://424377644605.dkr.ecr.eu-west-2.amazonaws.com/f2ride-dev-repo', 'ecr:eu-west-2:AWS Cred') {
                 sh "docker push 424377644605.dkr.ecr.eu-west-2.amazonaws.com/f2ride-dev-repo:latest"
                 }
