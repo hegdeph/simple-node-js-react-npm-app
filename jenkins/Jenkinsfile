@@ -24,7 +24,7 @@
            
            steps{
                script{
-                docker.build 424377644605.dkr.ecr.eu-west-2.amazonaws.com/f2ride-dev/nodeapp:latest
+                docker.build '424377644605.dkr.ecr.eu-west-2.amazonaws.com/f2ride-dev/nodeapp:latest'
                }
            }
     }
