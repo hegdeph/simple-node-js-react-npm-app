@@ -8,16 +8,16 @@
     stages {
         
         
-        stage('Build') {
-            environment {
-              CI = 'true'
-          }
+//        stage('Build') {
+ //           environment {
+ //             CI = 'true'
+ //         }
           
-            steps {
+  //          steps {
                // sh 'npm install'
-            }
+  //          }
             
-        }
+   //     }
         
        stage('Build image') {
            
