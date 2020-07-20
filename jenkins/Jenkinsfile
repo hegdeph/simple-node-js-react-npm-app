@@ -24,7 +24,7 @@
            
            steps{
                script{
-                docker.build --build-arg APP_NAME=sample -t 424377644605.dkr.ecr.eu-west-2.amazonaws.com/f2ride-dev/nodeapp:latest -f Dockerfile .
+                docker.build 424377644605.dkr.ecr.eu-west-2.amazonaws.com/f2ride-dev/nodeapp:latest
                }
            }
     }
