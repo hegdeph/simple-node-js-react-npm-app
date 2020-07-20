@@ -1,9 +1,8 @@
 
     pipeline{
-    agent {
-            label 'Jenkins-Cloud-Agent'
-          }
     
+    agent none
+        
     stages {
         
         
@@ -11,7 +10,9 @@
             environment {
               CI = 'true'
           }
-          
+          agent {
+            label 'Jenkins-Cloud-Agent'
+          }
             steps {
                 sh 'npm install'
             }
@@ -19,6 +20,9 @@
         }
         
        stage('Build image') {
+           agent {
+            label 'Jenkins-Cloud-Agent-Docker'
+          }
            
            steps{
                 sh "docker build --build-arg APP_NAME=sample -t 424377644605.dkr.ecr.eu-west-2.amazonaws.com/f2ride-dev-repo:latest -f Dockerfile ."
@@ -26,6 +30,9 @@
     }
     stage('Push image') {
         
+        agent {
+            label 'Jenkins-Cloud-Agent-Docker'
+          }
         
         steps {
             script{
