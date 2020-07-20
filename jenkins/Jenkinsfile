@@ -1,6 +1,8 @@
 
     pipeline{
-    agent none
+    agent {
+            label 'Jenkins-Cloud-Agent'
+          }
     
     stages {
         
@@ -9,9 +11,7 @@
             environment {
               CI = 'true'
           }
-          agent {
-            label 'Jenkins-Cloud-Agent'
-          }
+          
             steps {
                 sh 'npm install'
             }
@@ -19,18 +19,14 @@
         }
         
        stage('Build image') {
-           agent {
-            label 'Jenkins-Cloud-Agent'
-          }
+           
            steps{
                 sh "docker build --build-arg APP_NAME=sample -t 424377644605.dkr.ecr.eu-west-2.amazonaws.com/f2ride-dev-repo:latest -f Dockerfile ."
            }
     }
     stage('Push image') {
         
-        agent {
-            label 'Jenkins-Cloud-Agent'
-          }
+        
         steps {
             script{
                  docker.withRegistry('https://424377644605.dkr.ecr.eu-west-2.amazonaws.com/f2ride-dev-repo', 'ecr:eu-west-2:AWS Cred') 
