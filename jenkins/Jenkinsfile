@@ -5,19 +5,22 @@
         CI = 'true'
     }
     stages {
-        agent{
-        ecs {
+        
+        
+        stage('Build') {
+            agent{
+                ecs {
                 inheritFrom 'Jenkins-Cloud-Agent-NodeJs'
                 cpu 1024
                 memory 2048
                 image 'node:6-alpine'
                 
             }
-        stage('Build') {
             steps {
                 sh 'npm install'
             }
+            }
         }
-        }
+        
     }
     }
